@@ -88,9 +88,9 @@ Our workshop will help you understand how these systems work under the hood!
 
 ## Step 0 - Setup 💻
 
-Please refer to the [SETUP.md](./tuto/SETUP.md) file to install Foundry.
+Please refer to the [SETUP.md](./utils/SETUP.md) file to install Foundry.
 
-If you need a Solidity refresher, check out [Solidity.md](./tuto/Solidity.md).
+If you need a Solidity refresher, check out [Solidity.md](./utils/Solidity.md).
 
 ### Preparing the Workshop Files
 
