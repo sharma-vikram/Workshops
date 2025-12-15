@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #2bee79;
+    --color-background-light: #f6f8f7;
+    --color-background-dark: #0d110f;
+    --color-card-dark: #131a16;
+    --color-border-dark: #23332a;
+
+    --font-display: var(--font-spline-sans), sans-serif;
+    --font-body: var(--font-noto-sans), sans-serif;
+
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
+    --radius-2xl: 2.5rem;
+
+    --shadow-glow: 0 0 40px -10px rgba(43, 238, 121, 0.15);
+}
+
+/* Custom utilities */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.path-anim {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s linear forwards;
+}
+
+/* Price update pulse animation */
+@keyframes price-pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes price-flash {
+    0% {
+        background-color: transparent;
+    }
+
+    30% {
+        background-color: rgba(43, 238, 121, 0.15);
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+.price-updated {
+    animation: price-pulse 0.4s ease-out, price-flash 0.6s ease-out;
+}
+
+/* Toast animation */
+@keyframes toast-slide-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toast-slide-out {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.toast-enter {
+    animation: toast-slide-in 0.3s ease-out forwards;
+}
+
+.toast-exit {
+    animation: toast-slide-out 0.3s ease-in forwards;
+}
